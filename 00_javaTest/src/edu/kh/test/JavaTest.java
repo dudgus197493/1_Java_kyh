@@ -29,7 +29,7 @@ public class JavaTest {
 			var1 = 3;
 		}
 		
-		
+		System.out.println("git 쉽지 않습니다.");
 	}
 }
 
