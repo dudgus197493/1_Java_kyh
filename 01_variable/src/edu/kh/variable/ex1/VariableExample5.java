@@ -36,5 +36,6 @@ public class VariableExample5 {
 		// \n : 줄바꿈(개행)을 나타내는 탈줄(escape)문자
 		System.out.println("줄 바꼈나요?");	
 		
+		System.out.println("새로운 내용 추가");
 	}
 }
