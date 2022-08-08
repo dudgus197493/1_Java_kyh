@@ -32,13 +32,16 @@ public class OperatorPractice4 {
 		System.out.print("수학 : ");
 		int math = sc.nextInt();
 		
+		// 합계를 저장하기 위한 변수
 		int sum = kor + eng + math;
-		double evg = sum / 3.0;
+		
+		// 평균을 저장하기 위한 변수
+		Double avg = sum / 3.0;
 		
 		System.out.println();
 		System.out.println("합계 : " + sum);
-		System.out.println("평균 : " + evg);
-		System.out.println((kor >= 40 && eng >= 40 && math >= 40) && evg >= 60 ? "합격" : "불합격");
+		System.out.println("평균 : " + avg);
+		System.out.println((kor >= 40 && eng >= 40 && math >= 40) && avg >= 60 ? "합격" : "불합격");
 	}
 
 }

@@ -31,8 +31,19 @@ public class OperatorPractice2 {
 		System.out.print("번호(정수) : ");
 		int number = sc.nextInt();
 		
+		sc.nextLine();										// 입력 버퍼 맨 앞에 남은 엔터를 꺼내옴 -> 입력 버퍼 청소
+		
 		System.out.print("성별(남학생/여학생) : ");
-		String gender = sc.next();
+		String gender = sc.nextLine();
+		
+		// String gender = sc.nextLine();					// 버퍼의 맨 앞에 엔터를 꺼내와서 입력을 못하고 넘어 간다.
+		// ** 해결 방법 **
+		// 입력버퍼 맨 앞에 있는 엔터(개행문자)를 제거
+		
+		// 맨 앞에 엔터(개행문자)가 남는 경우
+		// -> next(), nextInt(), nextFloat(), nextDouble() 등....
+		//    nextLine()을 제외한 모두
+		//	  뒤에 sc.nextLine() 을 한번 더 작성
 		
 		System.out.print("성적(소수점 아래 둘째 자리까지) : ");
 		double score = sc.nextDouble();
