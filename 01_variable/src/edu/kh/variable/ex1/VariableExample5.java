@@ -33,13 +33,17 @@ public class VariableExample5 {
 		System.out.println(name + "님은 " + age + "세 " + gender + "성, 키는 " + height + "cm 입니다 (" + tf + ")");
 		
 		System.out.printf("%s님은 %d세 %c성, 키는 %.1fcm 입니다 (%b)\n", name, age, gender, height, tf);
-		// \n : 줄바꿈(개행)을 나타내는 탈줄(escape)문자	
+		// \n : 줄바꿈(개행)을 나타내는 탈줄(escape)문자
 		
-		System.out.println("새로운 내용 추가");
+		// printf 출력 포멧
+		//		- %5d : 5칸을 확보하고 오른쪽 정렬
+		//		- %-5d : 5칸을 확보하고 왼쪽 정렬
+		//		- %.2f : 소수점 아래 2자리까지만 표시
 		
-		// 주석
-		System.out.println("테스트용 코드");
 		
-		
+		System.out.printf("test : %d\n", 233123);
+		System.out.printf("test : %6d\n", 3);
+		System.out.printf("test : %6d\n", 123);
+				
 	}
 }

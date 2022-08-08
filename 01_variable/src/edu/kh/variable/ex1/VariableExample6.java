@@ -36,5 +36,10 @@ public class VariableExample6 {
 		String name = sc.next();		// sc.next()는 다음 공백 전까지 입력되는 단어 하나를 name 변수에 저장
 		System.out.println(name + "님 오늘 하루도 고생하셨습니다");
 		
+		// sc.next() : 한 단어 입력, 띄어쓰기 미포함
+		// -> 띄어쓰기, 엔터가 입력 종료를 의미
+		
+		// sc.nextLine() : 한 문장(한 줄) 입력, 띄어쓰기 포함
+		// -> 엔터가 입력 종료를 의미
 	}
 }

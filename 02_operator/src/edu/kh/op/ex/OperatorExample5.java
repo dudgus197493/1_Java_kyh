@@ -1,0 +1,58 @@
+package edu.kh.op.ex;
+
+import java.util.Scanner;
+
+public class OperatorExample5 {
+
+	public static void main(String[] args) {
+		// 복합 대입 연산자 : +=, -=, *=, /=, %=
+		// 다른 연산자와 대입 연산자가 결합한 것
+		// 자기 자신과 연산 후 연산 결과를 자기 자신에게 누적 대입
+		{
+			int a = 10;
+			
+			a++;
+			System.out.println("a를 1 증가 : " + a); 				// 11
+			
+			a += 4;												// a = a + 4 								
+			System.out.println("a를 4 증가 : " + a);				// 15
+			
+			a -= 10;											// a = a - 10
+			System.out.println("a를 10 감소 : " + a);				// 5
+			
+			a *= 3;												// a = a * 3
+			System.out.println("a를 3배 증가 : " + a);			// 15
+			
+			a /= 6;												// a = a / 6;
+			System.out.println("a를 6으로 나눴을 때의 몫 : " + a);	// 2
+			
+			a %= 2;												// a = a % 2;
+			System.out.println("a를 2로 나눴을 때의 나머지 : " + a); // 0
+		}
+		System.out.println("-----------------------------------------");
+		// 삼항 연산자 
+		// [조건식] ? [식1] : [식2];
+		// -> 조건식이 true일때 식1 수행, false일때 식2 수행
+		// * 조건식 : 연산 결과가 true/false인 식 (비교, 논리, 논리부정 연산자)
+		{
+			Scanner sc = new Scanner(System.in);
+			
+			// 입력 받은 정수가 짝수인지, 홀수인지 판별
+			// 출력결과 Ex)
+			// 정수 입력 : 4
+			// 짝수 입니다.
+			
+			// 정수 입력 : 5
+			// 홀수 입니다.
+			
+			System.out.print("정수 입력 : ");
+			int input = sc.nextInt();
+			
+			String result = input % 2 == 0 ? "짝수 입니다" : "홀수 입니다";		// [조건식] ? [식1] : [식2];
+			
+			System.out.println(result);
+		}
+
+	}
+
+}
