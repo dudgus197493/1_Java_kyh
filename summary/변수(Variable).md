@@ -123,6 +123,20 @@ System.out.println(4 * 3.141592653589793 * 5 * 5);
 ## 변수의 명명 규칙
 
 #### 1. 대소문자가 구분되며 길이 제한이 없다.
+  
+  `int asdlfkhasdlfkhasldkfhlsdkfhalsdkfhasldkfha;`
+  
+
+
+
+
+
+
+
+
+
+
+
 
 
 

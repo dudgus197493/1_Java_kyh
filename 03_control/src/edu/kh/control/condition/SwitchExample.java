@@ -20,11 +20,6 @@ public class SwitchExample {
 	 * default : 모든 case가 만족하지 않을 경우 수행하는 코드;
 	 * }
 	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
 	 * */
 	
 	public void ex1() {
