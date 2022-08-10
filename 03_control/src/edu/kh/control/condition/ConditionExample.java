@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class ConditionExample {
 	private int c;
 	
-	
-	
 	// if문 예시 1번
 	public void ex1() {
 		System.out.println("[if문 예시 1]");
