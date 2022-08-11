@@ -256,13 +256,14 @@ public class LoopPractice {
 		}
 	}
 	
-
 	public void practice10() {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("정수 입력 : ");
 		int input = sc.nextInt();
 		
+		
+		// 위쪽 삼각형
 		for(int i=1; i<=input; i++) {
 			for(int j = 0; j<i; j++) {
 				System.out.print("*");
@@ -270,13 +271,37 @@ public class LoopPractice {
 			System.out.println();
 		}
 		
+		
+		// 아랫쪽 삼각형
 		for(int x = 1; x <= input - 1; x++) {	// 2 
 			for(int k = 0; k < input - x; k++) {			// 2 1
 				System.out.print("*");
 			}
 			System.out.println();
 		}
+	}
+	
+	
+	
+	public void practice10v2() {
+		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+		
+		for(int row=1; row<= input*2-1; row++) {
+			
+			if(row < input) {
+				for(int col = 1; col <= row; col++) {
+					System.out.print("*");
+				}
+			} else {
+				for(int col = input; col <= row-input; col--) {
+					System.out.print("*");
+				}
+			}
+			
+		}
 	}
 	
 	public void practice11() {
@@ -304,6 +329,46 @@ public class LoopPractice {
 		}
 	}
 	
+	public void practice11v2() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+		
+		
+		for(int i = 1; i <= input; i++) {
+			for(int j = 0; j < input - i; j++) {
+				System.out.print(" ");
+			}
+			
+			for(int k = 0; k < i * 2 - 1; k++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+	
+	// for문 하나로 출력
+	public void practice11v3() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+		
+		for(int row=1; row <= input; row++) {
+			
+			for(int col = 1; col <= input * 2 -1; col++) {
+				if(col <= input - row || col >= input+row) {
+					System.out.print(" ");
+				} else {
+					System.out.print("*");
+				}
+			}
+			System.out.println();
+		}
+	}
+	
+	
 	public void practice12() {
 		Scanner sc = new Scanner(System.in);
 		
@@ -311,7 +376,7 @@ public class LoopPractice {
 		int input = sc.nextInt();
 		int col = 0;
 		for(int row = 1; row<=input; row++) {				// input번 반복
-			if(row == 1 || row == input) {					// row이 1 또는 input일때
+			if(row == 1 || row == input) {					// row이 1 또는 input일때 (첫 번째 / 마지막 줄, 칸일 때만 * 출력)
 				for(col = 1; col<=input; col++) {
 					System.out.print("*");
 				}
@@ -327,6 +392,20 @@ public class LoopPractice {
 			System.out.println();
 		}
 	}
+	
+	public void practice12v2() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+		
+//		if(row == 1||  row == input || col == 1 || col == input) {
+//			System.out.print("*");
+//		} else {
+//			System.out.print(" ");
+//		}
+	}
+	
 	
 	public void practice13() {
 		Scanner sc = new Scanner(System.in);
@@ -345,5 +424,24 @@ public class LoopPractice {
 			}
 		}
 		System.out.printf("\ncount : %d", count);
+	}
+	
+	
+	public void practice13v2() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("자연수 하나를 입력하세요 : ");
+		int input = sc.nextInt();
+		int count = 0;
+		
+		for(int i = 1; i <= input; i++) {
+			if(i % 2 == 0 || i % 3 == 0) {
+				System.out.printf("%d ", i);
+				
+				if(i % 2 == 0 && i % 3 == 0) {				// if 문을 따로사용하기보다 중첩하면 비교식을 좀더 효율적으로 줄일 수 있다.
+					count++;
+				}
+			}
+		}
 	}
 }

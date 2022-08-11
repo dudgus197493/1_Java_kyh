@@ -15,9 +15,13 @@ public class LoopPracticeRun {
 //		lp.practice6();
 //		lp.practice7();
 //		lp.practice8();
-		lp.practice9();
+//		lp.practice9();
+
+		
 //		lp.practice10();
 //		lp.practice11();
+//		lp.practice11v2();					
+//		lp.practice11v3();
 //		lp.practice12();
 //		lp.practice13();
 

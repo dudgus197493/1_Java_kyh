@@ -22,7 +22,15 @@ public class LoopRun {
 //		fm.ex15();
 //		fm.ex16();
 //		fm.ex17();
-		fm.ex18();
+//		fm.ex18();
+		
+		WhileExample wm = new WhileExample();
+		
+//		wm.ex1();
+//		wm.ex2();
+//		wm.ex3();
+		wm.ex4();
+		
 	}
 
 }
