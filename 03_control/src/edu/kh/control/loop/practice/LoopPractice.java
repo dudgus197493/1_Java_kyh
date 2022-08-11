@@ -98,12 +98,37 @@ public class LoopPractice {
 			for(int i = num1; i<= num2; i++) {
 				System.out.printf("%d ", i);
 			}
-		} else if(num2 < num1) {
+		} else {
 			for(int i = num2; i<= num1; i++) {
 				System.out.printf("%d ", i);
 			}
 		}
 	}
+	
+	public void practice4v2() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("첫 번째 숫자 : ");
+		int num1 = sc.nextInt();
+		
+		System.out.print("두 번째 숫자 : ");
+		int num2 = sc.nextInt();
+		
+		if(num1 == 0 || num2 == 0) {
+			System.out.println("1 이상의 숫자를 입력해주세요.");
+		} else {
+			if(num1 > num2) {			// 먼저 입력한 숫자가 더 작으면
+				int temp = num1;
+				num1 = num2;
+				num2 = temp;
+			}
+			
+			for(int i = num1; i <=num2; i++) {
+				System.out.printf("%d ", i);
+			}
+		}
+	}
+	
 	
 	public void practice5() {
 		Scanner sc = new Scanner(System.in);
@@ -131,6 +156,7 @@ public class LoopPractice {
 				for(int j = 1; j<10; j++) {
 					System.out.printf("%d X %d = %d\n", i, j, i*j);
 				}
+				System.out.println();
 			}			
 		}
 	}
@@ -166,16 +192,42 @@ public class LoopPractice {
 	}
 
 	public void practice9() {
+		
+//		다음과 같은 실행 예제를 구현하세요.
+		
+//		ex.
+//		정수 입력 : 4
+//		   *
+//		  **
+//		 ***
+//		****
+		
+		
+		
+		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("정수 입력 : ");
 		int input = sc.nextInt();
 		
 		//input = 4;
+		
 		for(int i = 1; i<= input; i++) {
-			for(int j = 0; j<input - i; j++) {		// 3 2 1 
+			
+			// 내가 푼 방법
+			for(int j = 0; j<input - i; j++) {		// 3 2 1	 
 				System.out.print(" ");
 			}
+			
+			// 초기식을 input으로 주고 증감식으로 감소시키는 방법
+//			for(int j = input - i; j > 0; j--) {		// 3 2 1 
+//				System.out.print(" ");
+//			}
+			
+			// 초기식을 input -1로 고정하고 조건식을 증감식으로 감소시키는 방법
+//			for(int j = input - 1; j >= i; j--) {		// 3 2 1 
+//				System.out.print(" ");
+//			}
 			
 			// 1 2 3 4 반복
 			for (int k = 0; k < i; k++) {
@@ -183,8 +235,27 @@ public class LoopPractice {
 			}
 			System.out.println();
 		}
-		
 	}
+	
+	
+	// if 문을 활용한 풀이
+	public void practice9v2() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+		
+		for(int row = 1; row<=input; row++) {
+			for(int col = 1; col <= input; col++) {
+				if(col <= input - row) {
+					System.out.println(" ");
+				} else {
+					System.out.println("*");
+				}
+			}			
+		}
+	}
+	
 
 	public void practice10() {
 		Scanner sc = new Scanner(System.in);
