@@ -13,7 +13,8 @@ public class BranchExampleRun {
 //		branch.upDownGame();
 //		branch.upDownGameV2();
 //		branch.upDownGameV3();
-		branch.RPSGame();
+//		branch.RPSGame();
+		branch.RPSGameV2();
 	}
 
 }
