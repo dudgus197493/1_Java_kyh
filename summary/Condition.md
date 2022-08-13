@@ -8,7 +8,7 @@
 ### [3. if ~ else문](#if--else문)
 ### [4. if ~ else if ~ else문](#if--else-if--else문)
 ### [5. switch문](#switch문)
-### [Ex. else와 default의 차이점](#ex-elseec9980-defaultec9d98-ecb0a8ec9db4eca090-1)
+### [Ex. else와 default의 차이점](#ex-else와-default의-차이)
 #  
 </br>
 
@@ -274,7 +274,7 @@ default:
         ```  
         </br>
 
-## Ex. **else**와 **default**의 차이점
+## Ex. **else**와 **default**의 차이
 > ### if ~ else if ~ else 는 앞 조건식의 결과가 true가 나와 내부코드가 실행되면 다음 else if 와 else가 **절대 실행되지 않지만**  
 > ### default는 조건에 맞는 case가 존재해 내부코드가 실행 되더라도 **`break`** 가 존재하지 않으면 무조건 실행된다.
 
