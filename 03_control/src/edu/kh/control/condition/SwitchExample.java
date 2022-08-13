@@ -232,4 +232,15 @@ public class SwitchExample {
 		
 		System.out.println(season);
 	}
+	
+	public void test() {
+		int num = 1;
+		
+		switch(num % 2) {
+		case 0:
+			System.out.println("짝수 입니다.");
+		default:
+			System.out.println("상관없이 수행됩니다.");
+		}
+	}
 }

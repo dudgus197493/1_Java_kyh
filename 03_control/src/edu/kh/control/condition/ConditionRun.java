@@ -19,8 +19,8 @@ public class ConditionRun {
 //		ex2.ex2();
 //		ex2.ex3();
 //		ex2.ex4();
-		ex2.ex5();
+//		ex2.ex5();
 //		ex2.test();
-		
+		ex2.test();
 	}
 }
