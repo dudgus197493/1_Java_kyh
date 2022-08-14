@@ -196,7 +196,7 @@ default:
     ```Java
     int month = 9;
     String season = "여름";
-    switch (month)
+    switch (month) {
     case 3: season = "봄"; 
     case 4: season = "봄"; 
     case 5: season = "봄"; break;
@@ -214,6 +214,7 @@ default:
     case 12: season = "겨울"; break;
 
     default: season = "해당하는 계절이 없습니다.";
+    }
     ```
 - ### 동작 과정
     1. switch 괄호안에 변수 확인 `month == 9`
@@ -240,7 +241,7 @@ default:
         int month = 9;
         String season = "여름";
 
-        switch (month)
+        switch (month) {
         case 3:  
         case 4: 
         case 5: season = "봄"; break;
@@ -258,19 +259,21 @@ default:
         case 12: season = "겨울"; break;
 
         default: season = "해당하는 계절이 없습니다.";
+        }
         ```
     - **code 2**
         ```Java
         int month = 9;
         String season = "여름";
 
-        switch (month)
+        switch (month) {
         case 3:  case 4: case 5: season = "봄"; break;
         case 6: case 7: case 8: season = "여름"; break;
         case 9: case 10: case 11: season = "가을"; break;
         case 1: case 2: case 12: season = "겨울"; break;
 
         default: season = "해당하는 계절이 없습니다.";
+        }
         ```  
         </br>
 
