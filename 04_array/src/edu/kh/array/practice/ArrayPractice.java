@@ -158,7 +158,7 @@ public class ArrayPractice {
 				System.out.printf("%d ", index[i]);				
 			}
 		}
-		System.out.printf("\n%c의 개수 : %d  ", ch, count);
+		System.out.printf("\n%c의 개수 : %d ", ch, count);
 		
 	}
 	
@@ -192,9 +192,9 @@ public class ArrayPractice {
 		}
 		
 		for(int i =0; i< arr.length; i++) {
-			System.out.printf("%d", arr[i]);
+			System.out.printf("%d ", arr[i]);
 		}
-		System.out.println("총 합 : " + sum);
+		System.out.println("\n총 합 : " + sum);
 	}
 	
 	
@@ -256,7 +256,7 @@ public class ArrayPractice {
 		
 		for(int i = 0; i<arr.length; i++) {
 			if(i < (arr.length/2) + 1) {
-				arr[i] = i+1;
+				arr[i] = i + 1;
 			} else {
 				arr[i] = input - i;
 			}

@@ -8,7 +8,7 @@ public class ArrayPracticeRun {
 //		ap.practice1();
 //		ap.practice2();
 //		ap.practice3();	
-//		ap.practice4(); x	
+//		ap.practice4();	
 //		ap.practice5();
 //		ap.practice6();
 //		ap.practice7();
@@ -19,8 +19,8 @@ public class ArrayPracticeRun {
 //		ap.practice12();
 //		ap.practice13();
 //		ap.practice14();
-//		ap.practice15();
-//		ap.practice16();
+//		ap.practice15(); 
+//		ap.practice16(); 
 //		ap.practice17();
 //		ap.practice18();
 //		ap.practice19();
@@ -29,13 +29,6 @@ public class ArrayPracticeRun {
 //		ap.practice22();
 //		ap.practice23();
 //		ap.practice24();
-		ap.practice25();
-		
-		
-		
-		
-		
-		
 
 	}
 
