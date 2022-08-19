@@ -1,6 +1,7 @@
 package edu.kh.oop.constructor;
 
 import edu.kh.oop.constructor.model.vo.Member;
+import edu.kh.oop.constructor.model.vo.Temp;
 
 public class ConstructorRun {
 
@@ -24,6 +25,13 @@ public class ConstructorRun {
 		Member member6 = new Member("member1023", "pass1023", "010-1234-5678", 24);
 		
 		Member member7 = new Member("ididididid", "pwpwpwpwpw", "123456789", 999);
+		
+		Temp tmp = new Temp();
+		
+		
+		
+		
+		
 		
 		
 		System.out.println("프로그램 종료");
