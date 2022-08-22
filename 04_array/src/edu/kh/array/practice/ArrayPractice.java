@@ -1019,34 +1019,34 @@ public class ArrayPractice {
 			int colBingo = 0;								// 열빙고 갯수
 			// 행 빙고 검사
 			for(int i = 1; i<check.length; i++) {
-				rowBingo += check[pos[0]+1][i];				// 사용자가 입력한 위치좌표가 속해있는 열
+				rowBingo += check[pos[0]+1][i];				// 사용자가 입력한 위치좌표가 속해있는 행
 			}
-			if(rowBingo == size) {
-				check[pos[0]+1][0] = 1;
+			if(rowBingo == size) {							// 행에 저장된 값이 빙고 사이즈와 같으면
+				check[pos[0]+1][0] = 1;						// 해당 행의 빙고 여부 저장 인덱스의 값을 1로 갱신
 			}
 			// 열 빙고 검사
-			for(int i = 1; i<check.length; i++) {			 
-				colBingo += check[i][pos[1] + 1];
+			for(int i = 1; i<check.length; i++) {			
+				colBingo += check[i][pos[1] + 1];			// 사용자가 입력한 위치좌표가 속해있는 열
 			}
-			if(colBingo == size) {
-				check[0][pos[1] + 1] = 1;
+			if(colBingo == size) {							// 열의 저장된 값이 빙고 사이즈와 같으면
+				check[0][pos[1] + 1] = 1;					// 해당 열의 빙고 여부 저장 인덱스의 값을 1로 갱신
 			}
 			
 			// 총 빙고 체크 =======================
 			
 			// 열 빙고 갯수
-			for(int i = 1; i<check.length; i++) {
+			for(int i = 1; i<check.length; i++) {			// 열의 빙고 여부 저장 인덱스의 값을 카운트
 				bingoCnt += check[0][i];
 			}
 			
 			// 행 빙고 갯수
-			for(int i = 1; i<check.length; i++) {
+			for(int i = 1; i<check.length; i++) {			// 행의 빙고 여부 저장 인덱스의 값을 카운트
 				bingoCnt += check[i][0];
 			}
 			
 			// 대각선 빙고 체크=====================
-			int toRight = 0;
-			int toLeft = 0;
+			int toRight = 0;								// 오른쪽을 향하는 대각선 빙고
+			int toLeft = 0;									// 왼쪽을 향하는 대각선 빙고 
 			for(int i = 0; i < size; i++) {
 				toRight += check[i+1][i+1]; 
 				toLeft += check[i+1][size - i];
@@ -1078,101 +1078,4 @@ public class ArrayPractice {
 		}
 		System.out.println("***** BINGO *****");
 	}
-	
-	public void BingoGame() {
-	      Scanner sc = new Scanner(System.in);
-	      
-	      System.out.print("빙고판 크기 지정 : ");
-	      int row = sc.nextInt();
-	      
-	      boolean flag = false;
-	      String[][] array = new String[row][row];
-	      for(int i=0; i< array.length; i++) {
-	         for(int y=0; y< array[i].length; y++) {					// 배열 돌면서
-	            int ran = (int)(Math.random()*row*row+1);				// 난수 생성
-	             array[i][y]= String.valueOf(ran);						// 정수형 난수를 문자열로 바꿔 대입		
-	            flag = false;	// 중복여부 확인 위한 논리값
-	            for(int ix =0; ix <= i; ix++) {
-	               if(flag) {
-	                  break;
-	               }
-	               for(int x=0; x < array[i].length; x++) {
-	                  if((i) == ix && x >=y) {
-	                     flag = true;
-	                     break;
-	                  }
-	                  //System.out.println(x+":"+array[i][x].equals(String.valueOf(ran)));
-	                  if(array[ix][x].equals(String.valueOf(ran))) {
-	                     //array[i][x]==String.valueOf(ran)
-	                     y--;
-	                     flag = true;
-	                     break;
-	                  }
-	               }   
-	            }
-	         }
-	      }
-	      for(int i=0; i< array.length; i++) {
-	            for(int y=0; y< array[i].length; y++) {
-	               System.out.print(array[i][y]+" ");
-	            }
-	            System.out.println();
-	         }   
-	      System.out.println("============빙고게임 시작============");
-	      
-	      while(true) {
-	         int roundCount =0;
-	         int[][] bingoCount = new int[row+1][row+1];
-	         System.out.print("정수를 입력하시오 : ");
-	         int bingo = sc.nextInt();
-	         if(1 > bingo || bingo > row*row) {
-	            System.out.println("다시 입력해수세요");
-	            continue;
-	         }
-	         for(int i=0; i< array.length; i++) {
-	             for(int y=0; y< array[i].length; y++) {
-	                if(array[i][y].equals(String.valueOf(bingo))) {
-	                   array[i][y] ="★";
-	                }
-	                System.out.print(array[i][y]+" ");
-	             }
-	             System.out.println();
-	          }
-	         for(int i=0; i< array.length; i++) {
-	             for(int y=0; y< array[i].length; y++) {
-	                if(array[i][y].equals("★")) {
-	                   bingoCount[i][row] +=1;
-	                   bingoCount[row][y] +=1;
-	                   if(i==y) {
-	                      bingoCount[row][row]+=1;
-	                   }
-	                   if((i==0&&y==4)||(i==1&&y==3)||(i==2&&y==2)||(i==3&&y==1)||(i==4&&y==0)) {
-	                      bingoCount[0][0]+=1;
-	                   }
-	                }
-	             }
-	          }
-	         for(int y=0; y< bingoCount.length; y++) {
-	            if(bingoCount[5][y]==5) {
-	               roundCount++;
-	            }
-	            if(bingoCount[0][y]==5) {
-	               roundCount++;
-	            }
-	         }
-	         for(int i=0; i< bingoCount.length-1; i++) {
-	            if(bingoCount[i][5]==5) {
-	               roundCount++;
-	            }
-	         }
-	         
-	         
-	         System.out.printf("현재 %d빙고\n",roundCount);
-	         if(roundCount>=3) {
-	            System.out.println("***** BINGO!!! *****");
-	            break;
-	         }
-	      }           
-	}
-	
 }
