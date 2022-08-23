@@ -6,7 +6,8 @@ public class Run {
 
 	public static void main(String[] args) {
 		Example ex = new Example();
-		ex.ex1();
+//		ex.ex1();
+		ex.ex2();
 	}
 
 }

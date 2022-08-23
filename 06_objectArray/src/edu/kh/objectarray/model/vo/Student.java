@@ -42,7 +42,6 @@ public class Student {
 	public void setGrade(int grade) {
 		this.grade = grade;
 	}
-	
 
 	public int getClassRomm() {
 		return classRomm;
