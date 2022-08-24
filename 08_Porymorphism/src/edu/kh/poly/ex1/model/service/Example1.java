@@ -161,7 +161,11 @@ public class Example1 {
 		} else {
 			((Spark)c).dc();
 		}
-		
+	}
+	
+	public void ex5() {
+		Car c = new Truck();
+		c.toString();
 	}
 }
 

@@ -1,4 +1,4 @@
-package edu.kh.poly.ex1.model.run;
+package edu.kh.poly.ex1.run;
 
 import edu.kh.poly.ex1.model.service.Example1;
 
