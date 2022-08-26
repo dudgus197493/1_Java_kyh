@@ -222,4 +222,7 @@ public class ExClass {
         // std1의 schoolName필드값만 바꿨지만 
         // std1의 schoolName의 Static 메모리 주소를
         // std2의 필드도 공유하고 있기 때문에 std2의 값이 바뀐다.
-        ```
+        ```  
+        </br>
+
+### 필드 예약어 - final
