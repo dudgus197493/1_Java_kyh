@@ -1,5 +1,6 @@
 # KH Java  
 ## 할 일
+- [ ] README.md 파일에 정리 완료된 파일들 링크 작성
 - [ ] 분기문(Branch) 정리
 - [ ] 배열(Array) 정리
 - [ ] 객체 지향 프로그래밍(OOP) 정리
@@ -13,7 +14,6 @@
 - [ ] Polymorphism.md 8행 메모리에서의 다형성 예시 이미지 추가
 - [x] Polymorphism.md 목차 작성
 - [x] Inheritance.md 목차 작성
-
 
 #
 
