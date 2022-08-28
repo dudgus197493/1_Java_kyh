@@ -251,8 +251,26 @@ main () {
 - 성립 조건
   - 같은 메서드 이름
   - 다른 매개변수 선언부(매개변수 타입, 개수, 순서)
+  
+    ```Java
+    class TestClass {
+        public void method(int num1, int num2) {
+            // 오버로딩 1
+        }
+        public void method(int num1, int num2, String str) {
+            // 오버로딩 2
+        }
+        public void method(String str, int num1, int num2) {
+            // 오버로딩 3
+        }
+        // public void method(String str, int num2, int num1) {
+            // [에러] 매개변수의 이름은 오버로딩의 조건이 될 수 없음
+        // }
+    }
+    ```
 - 주의 사항
   - 메소드의 리턴타입은 오버로딩 조건과 관계 없음
+  
     ```Java
     class TestClass{
         public int method() {

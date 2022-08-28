@@ -167,8 +167,6 @@ class ExamClass2 {
 </br>
 
 ## 필드(Field)
-
-### 필드 표현식
 ```Java
 // [] 는 선택 사항(생략 가능)
 [접근제한자] [예약어] class 클래스명 {
@@ -190,7 +188,8 @@ public class Academy {
 |`public`|O|O|O|O|
 |`protectd`|O|O|O||
 |`(default)`|O|O|||
-|`private`|O||||  
+|`private`|O| | | |  
+
 </br>
 
 ### 필드 예약어 - static
@@ -222,7 +221,169 @@ public class ExClass {
         // std1의 schoolName필드값만 바꿨지만 
         // std1의 schoolName의 Static 메모리 주소를
         // std2의 필드도 공유하고 있기 때문에 std2의 값이 바뀐다.
-        ```  
-        </br>
+        ``` 
 
 ### 필드 예약어 - final
+> #### 하나의 값만 계속 저장해야 하는 변수에 사용하느 예약어
+```Java
+public class ExClass {
+    private final int EXAM_VALUE1 = 100;    // 상수 표기와 동일
+
+    private int examValue2;
+}
+```
+
+### 필드 - 클래스 초기화 블럭
+> #### 인스턴습 블럭( `{ }` ) - 인스턴스 변수를 초기화 시키는 블럭, 객체 생성시 마다 초기화
+> #### static(클래스) 블럭(`static{ }`) - static 필드 초기화 시키는 블럭, 프로그램 시작 시 한 번만 초기화
+```Java
+public class ExClass {
+    private static int EXAM_VALUE = 10;
+    private String examStr;
+    static {
+        EXAM_VALUE = 20;
+    }
+    {
+        examStr = "초기화 블럭 실행";
+        // EXAM_VALUE = 30; // static 변수를 instance 초기화 블럭에서도 초기호 가능
+                         // 하지만 인스턴스 생성 시마다 Static영역에 변수 초기화 -> 성능 낭비
+    }
+}
+```
+
+### 필드 - 초기화 순서
+- 클래스 변수  
+
+        JVM 기본값  ->  명시적 초기값  ->  클래스 초기화 블럭 초기값
+- 인스턴스 변수
+
+        JVM 기본값  ->  명시적 초기값  ->  인스턴스 초기화 블럭 초기값  ->  생성자를 통한 초기값  
+</br>
+
+## 생성자(Constructor)
+> ### 객체가 **new** 연산자를 통해 **Heap** 메모리 영역에 할당될 때 객체 안에서 만들어지는 **필드 초기화 + 생성 시 필요한 기능 수행**
+> 생성자는 **일종의 메서드**로 전달된 초기값을 받아서 객체의 필드의 기록
+
+### 기본 생성자
+> 작성하지 않은 경우, 클래스 사용 시 **컴파일러가 자동으로 기본 생성자 생성**
+```Java
+public class Member {
+    private String memberId;
+    private String memberPw;
+    private String memberPhone;
+    private int memberAge;
+
+    // 기본 생성자 : 매개변수가 없는 생성자
+    public Member() {
+        // 생성자 사용 목적
+        // 1. 필드 초기화
+        memberId = "member01";
+        memberPw = "pass01!";
+        memberPhone = "010-1234-5678";
+        memberAge = 25;
+
+        // 2. 객체 생성 시 수행해야 되는 기능
+        System.out.println("Member 객체가 생성되었습니다.");
+
+        // 한번 만들어둔 생성자를 계속 재사용 -> 코드길이 감소, 재사용성 증가
+    }
+}
+```
+
+### 매개변수 생성자
+> 객체 생성 시 전달받은 값으로 객체를 초기화 하기 위해 사용  
+> **매개변수 생성자 작성 시 컴파일러가 기본 생성자를 자동으로 생성해주지 않음**  
+> 상속에서 사용 시 반드시 기본 생성자를 작성  
+> [오버로딩](/inheritance.md)을 이용하여 작성
+```Java
+public class Member {
+    private String memberId;
+    private String memberPw;
+    private String memberPhone;
+    private int memberAge;
+
+    public Member(String memberId, String memberPw, String memberPhone, int memberAge) {
+        // 필드명과 매개변수명이 같을 경우
+        // 필드명 앞에 this.를 붙여 필드명이라는 것을 명시한다.
+        this.memberId = memberId;
+        this.memberPw = memberPw;
+        this.memberPhone = memberPhone;
+        this.memberAge = memberAge;
+    }
+    public Member(String memberId, String memberPw){
+        // ...
+        // 매개변수 생성자는 오버로딩하여 사용 가능하다.
+    }
+}
+```
+- 매개 변수 생성자 작성 시 ***컴파일러가 기본 생성자를 작성해주지 않음*** (위 코드에서)
+
+    ```Java
+    public static void main(String[] args) {
+        Member member = new Member(); // [에러] The constructor Member() is undefined
+    }
+    ```
+
+### this
+> 모든 인스턴스의 메서드에 숨겨진 채 존재하는 참조변수 (인스턴스 생성 시 자신의 시작 주소값을 저장한 참조변수)  
+> 함수 실행 시 전달되는 객체의 주소를 자동으로 받음
+```Java
+public class ThisClass {
+    private String name;
+    public ThisClass() { }
+    public thisClass(String name ) {
+        // 필드의 name과 매개변수 name을 this참조변수를 통해 구분함
+        this.name = name;
+    }
+}
+```
+### this()
+> 생성자, 같은 클래스의 다른 생성자를 호출할 때 사용   
+> ***반드시 첫 번째 줄에 선언해야 함***
+```Java
+public class Student {
+    private String name;
+    private int grade;
+    private int classRoom;
+
+    public Student() {
+        // 기본 생성자의 필드 초기화를 this()를 이용하여
+        // 이미 만들어진 
+        this("홍길동", 3);
+    }
+    public Student(String name, int grade) {
+        this.name = name;
+        this.grade = grade;
+    }
+    // 생성자 오버로딩시에도 사용
+    // 중복코드 제거
+    public Student(String name, int grade, int classRoom) {
+        this(name, grade);
+        this.classRoom = classRoom;
+        // this(name, grade); [에러] Constructor call must be the first statement in a constructor
+    }
+}
+```  
+</br>
+
+## 메서드(Method)
+> ### 전달 값(매개변수)이 없는 상태로 호출 or 값을 전달하여 호출
+> ### 함수 내에 작성된 연산 수행
+> ### 수행 후 반환 값 / 결과 값(return)은 있거나 없을 수 있음
+```Java
+[접근제한자] [예약어] 반환형 메서드명 ([메개변수]) {
+    // 기능 구현
+}
+// 위 규칙을 지킨 작성예시
+public void introduce() {
+    System.out.println("이것은 메서드 입니다.");
+}
+```
+### 메서드 - 접근제한자
+|**구분**|**클래스**|**패키지**|**자손 클래스**|**전체**|
+|:--:|:--:|:--:|:--:|:--:|
+|public|O|O|O|O|
+|protected|O|O|O||
+|(default)|O|O|||
+|private|O||||
+
