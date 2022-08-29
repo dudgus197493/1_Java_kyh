@@ -53,18 +53,31 @@
     ### 2. 코드를 공통적으로 관리하기 때문에 **코드의 추가 및 변경 용이**
     > #### 예제코드에서 Person LIFE_EXP 필드의 값을 90으로 바꾸면 Person을 상속하는 모든 클래스의 LIFE_EXP 값이 바뀐다.
 
-    ### 3. 코드의 **중복을 제거**하여 프로그램의 **생산성과 유지보스에 크게 기여**  
+    ### 3. 코드의 **중복을 제거**하여 프로그램의 **생산성과 유지보스에 크게 기여**
+    > #### ChildA ~ C 클래스에 methodA를 일일이 작성하는 대신 `extends Parent` 상속 구문 한줄로 중복코드를 제거할 수 있다.
     ```Java
-    public Student(String name, int age, int grade, int classRoom) {
-        // setName(name);
-        // setName(age);
-        super(name, age);
-
-        this.grade = grade; 
-        this.classRoom = classRoom;
+    class Parent {
+        public void methodA(){
+            // 내용
+        }
+    }
+    class ChlildA extends Parent {
+        // public void methodA(){
+            // 내용
+        // }
+    }
+    class ChlildB extends Parent { 
+        // public void methodA(){
+            // 내용
+        // }
+    }
+    class ChlildC extends Parent {
+        // public void methodA(){
+            // 내용
+        // }
     }
     ```
-    > #### 이미 만들어진 부모 클래스의 생성자를 재활용하여 필드를 초기화 하는 중복코드를 제거 하였다.
+    
     </br>
 
 
@@ -237,6 +250,7 @@ main () {
     }
     ```
   - #### 부모 메소드의 예외처리 클래스 처리범위보다 좁은 범위로 예외처리 클래스 수정 가능
+    - [Exception과 오버라이딩](Exception.md)
 
 - ### 성립 조건
   - 부모 클래스의 메소드와 자식 클래스의 메소드 비교
