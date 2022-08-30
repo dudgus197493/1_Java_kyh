@@ -124,11 +124,11 @@ public class EmployeeManagementService {
 	 * @return <Key : 부서명, Value : 해당 부서의 급여합>인 Map반환
 	 */
 	public Map<String, Integer> selectDepartmentalSalary() {
-		Map salaryHash = new HashMap();
+		Map<String, Integer> salaryHash = new HashMap<>();
 		for(Employee e : employeeList) {
 			String key = e.getDepartmentTitle();
 			if(salaryHash.containsKey(key)) {
-				salaryHash.put(key, (int)salaryHash.get(key) + e.getSalary());
+				salaryHash.put(key, salaryHash.get(key) + e.getSalary());
 			} else {
 				salaryHash.put(key, e.getSalary());
 			}
