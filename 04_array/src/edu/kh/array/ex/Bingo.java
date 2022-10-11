@@ -20,10 +20,13 @@ public class Bingo {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		// 빙고판 크기 입력 : 
 		System.out.print("빙고판 크기 입력 : ");
 		int size = sc.nextInt();
 		
-		String[][] map = new String[size][size]; 
+		// 빙고판 생성
+		// 크기 : 입력받은크기*입력받은크기
+		String[][] map = new String[size][size];
 		int[][] check = new int[size+1][size+1];			// 빙고 여부를 체크할 인덱스 1 추가
 															// ＊ 코드의 전체적인 동작 과정
 															// 1. 배열의 모든 요소 0으로 초기화
@@ -31,11 +34,14 @@ public class Bingo {
 															// 3. 유저가 입력할 때마다 그 좌표가 속해있는 열과 행의 합을 각각 계산
 															// 4. 합이 빙고판의 사이즈와 같다면 빙고(각 열과 행의 0번째 인덱스는 빙고 여부를 계산하기 위한 공간 0 : false / 1 : true)
 															// 5. 유저가 입력할 때마다 각열과 대각선의 빙고수를 계산해서 3 이상 넘으면 break;
+		
+		// 생성한 빙고판에 랜덤 난수 중복없이 대입
 		// 랜덤 난수를 중복없이 채우기위한 배열
 		int[] ranArr = new int[size*size];					// 빙고판 사이즈만큼의 배열 생성
 		for(int i =0; i<ranArr.length; i++) {				// 1 ~ 빙고판 사이즈사이의 숫자를 for문을 이용한 초기화
 			ranArr[i] = i+1;
 		}
+		
 		
 		// 난수 배열 섞기
 		for(int i =0; i<ranArr.length; i++) {				// 랜덤으로 자리 두곳을 뽑아 배열 사이즈만큼 돌면서 위치 변경
@@ -55,8 +61,6 @@ public class Bingo {
 		}
 		// 빙고맵 초기화 ===============================		
 		
-		
-		
 		// 빙고판 프린트 ================================
 		for(int i =0; i<map.length; i++) {						// 사용자가 볼 빙고판 출력
 			for(int j = 0; j<map[i].length; j++) {
@@ -64,6 +68,7 @@ public class Bingo {
 			}
 			System.out.println();
 		}
+		
 		// 빙고판 프린트 ================================		
 		// 체크판 프린트											// 내부 실행현황을 볼수 있는 check배열 출력 코드
 //		for(int i =0; i<check.length; i++) {
@@ -73,9 +78,11 @@ public class Bingo {
 //			System.out.println();
 //		}
 		
-		
+		// 빙고갯수 카운트 변수
 		int bingoCnt = 0;
 		
+		// 빙고갯수가 3이상이 될 때까지 무한반복하며
+		// 사용자 입력 받기
 		System.out.println("=============빙고 게임 시작==========");
 		// 반복 시작========================================================================================================================
 		while(bingoCnt < 3) {										// 빙고가 3이상이면 게임 종료
@@ -88,6 +95,7 @@ public class Bingo {
 			
 			String input = Integer.toString(num);					// 사용자입력을 정수로 받아 필요한 계산 끝낸후 비교를 위해 문자열로 형변환
 			
+			// 사용자가 입력한 숫자의 빙고판에서의 위치 가져오기
 			// 위치 가져오기 ==================================
 			int[] pos = new int[2];									// 위치 정보를 가져오기 위한 배열 생성
 			for(int i =0; i<map.length; i++) {						// 빙고판을 돌면서 
@@ -170,6 +178,8 @@ public class Bingo {
 		}
 		System.out.println("***** BINGO *****");
 	}
+	
+	
 	
 	public void BingoGame() {
 	      Scanner sc = new Scanner(System.in);
@@ -265,7 +275,5 @@ public class Bingo {
 	            break;
 	         }
 	      }                                                  
-	      
-	      
 	   }
 }
